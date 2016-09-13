@@ -21,7 +21,11 @@ gem 'coffee-rails', '~> 4.0.0'
 # Twitter Bootstrap 3, some older versions of the gem
 gem 'bootstrap-sass', '~> 3.3.5.1'
 
+gem 'kaminari'
+
 gem 'sprockets', '2.11.0'
+
+gem 'simple_form'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
