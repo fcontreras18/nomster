@@ -7,7 +7,7 @@ gem 'rails', '4.0.1'
 gem 'pg'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
+gem 'sass-rails'
 
 # Gemfile added by me
 gem 'rails_12factor', group: :production
@@ -17,6 +17,11 @@ gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
+
+# Twitter Bootstrap 3, some older versions of the gem
+gem 'bootstrap-sass', '~> 3.3.5.1'
+
+gem 'sprockets', '2.11.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
