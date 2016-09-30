@@ -41,7 +41,7 @@
   </div>
 </div>
 
-<!-- Modal -->
+<!-- Modal Comment-->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -63,6 +63,25 @@
   </div>
 </div>
 
+
+<%= simple_form_for @photo, url: '#' do |f| %>
+    <%= f.input :caption %>
+    <%= f.input :picture %>
+  </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <%= f.submit 'Upload a Photo' , class: 'btn btn-primary' %>
+      </div>
+  <% end %>
+  </div>
+</div>
+
+<% @place.photos.each do |photo| %>
+  <%= image_tag photo.picture %>
+  <%= photo.caption %>
+<% end %>
+
+<!-- Button comment -->
 <div class="col-xs-10 col-xs-offset-1">
   <h1 class="pull-left">Comments</h1>
 

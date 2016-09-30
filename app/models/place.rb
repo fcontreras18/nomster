@@ -1,6 +1,7 @@
 class Place < ActiveRecord::Base
   belongs_to :user
   has_many :comments
+  has_many :photos
 
   geocoded_by :address
   after_validation :geocode
@@ -8,4 +9,5 @@ class Place < ActiveRecord::Base
   validates :name, length: { minimum: 3 }, presence: true
   validates :address, presence: true
   validates :description, presence: true
+
 end
