@@ -27,6 +27,8 @@ gem 'sprockets', '2.11.0'
 
 gem 'carrierwave', '1.0.0.beta'
 
+gem 'fog'
+
 gem 'simple_form'
 
 gem 'devise', '>= 3.2.4'
