@@ -37,6 +37,10 @@ gem 'geocoder', '1.3.4'
 
 gem 'figaro', '>= 1.0.0'
 
+group :test, :development do
+  gem 'faker'
+end
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
