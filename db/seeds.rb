@@ -5,3 +5,16 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# require 'faker'
+# include Faker
+
+
+# 1.times do
+
+#   place = Place.create( :name => "#{Name.name}",
+#                         :address => "#{address.building_number.street_name.city.state.}",
+#                         :description => Lorem.paragraphs.join("<br/>")
+#     )
+  
+# end
