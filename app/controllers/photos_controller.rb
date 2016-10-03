@@ -5,10 +5,10 @@ class PhotosController < ApplicationController
     @place = Place.find(params[:place_id]) 
     @photo = @place.photos.build(photo_params)
 
-    if @photo.save
-    # @place.photos.create(photo_params)
-     redirect_to place_path(@place)
-    end
+    #if @photo.save
+    @place.photos.create(photo_params)
+    redirect_to place_path(@place)
+    #end
   end
 
 private
