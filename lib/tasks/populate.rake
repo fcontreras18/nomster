@@ -17,6 +17,6 @@ namespace :db do
   end
 end
 
-Places.all.each do  | place |
-  Photo.create!(picture:  Faker::Avatar::image("random sentence", "250x250", "jpg") )
-end
+# Places.all.each do  | place |
+#   Photo.create!(picture: Faker::Avatar::image("random sentence", "250x250", "jpg") )
+# end
