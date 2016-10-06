@@ -42,16 +42,30 @@
   <div class="booyah-box col-xs-10 col-xs-offset-1">
     <h1><%= link_to place.name, place_path(place) %></h1><br />
     <i><%= place.address %></i><br /><br />
-    <p><%= place.description %></p><br />
 
-    <% if place.user.present? %>
-      <small><%= place.user.email %></small>
+    <% if place.photos.present? %>
+    <div class="col-xs-3">
+      <%= image_tag place.photos.first.picture, class: "img-responsive img-rounded"%>
+
+    </div>
     <% end %>
+
+    <div class="col-xs-9">
+      <%= place.description %>
+      <% if place.user.present? %>
+      <p>
+        <br/>
+      <small><%= place.user.email %></small>
+      </p>
+      <% end %>
+    </div>  
+
     <% if place.comments.present? %>
       <div class="col-xs-12">
         <blockquote>
           <% if place.comments.last.humanized_rating.present? %>
-            <b><%= place.comments.last.humanized_rating %></b> -
+            <b><%= place.comments.last.humanized_rating %></b> 
+            -
           <% end %>
           <%= place.comments.last.message %>
           <small><%= place.comments.last.user.email %></small>
