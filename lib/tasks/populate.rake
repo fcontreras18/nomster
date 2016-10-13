@@ -3,7 +3,7 @@ namespace :db do
   task :populate => :environment do
     require 'faker'
 
-    #[Place, Photo].each
+    [Place, Photo].each
 
     #Place.all.each do  |place|
       # => Photo.picture = Faker::Avatar.image("random sentence", "250x250", "jpg")
@@ -20,9 +20,9 @@ namespace :db do
     #   end    
     end
 
-    Place.all.each  |place| 
-      photo.avatar = File.open(Dir.glob(File.join(Rails.root, "random sentence", "250x250", "jpg")).sample); photo.create! 
-    end
+    # Place.all.each  |place| 
+    #   photo.avatar = File.open(Dir.glob(File.join(Rails.root, "random sentence", "250x250", "jpg")).sample); photo.create! 
+    # end
   end
 end
 
