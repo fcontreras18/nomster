@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.1'
+gem 'rails', '~> 4.2.7.1'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
@@ -16,7 +16,7 @@ gem 'rails_12factor', group: :production
 gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails', '~> 4.2.1'
 
 # Twitter Bootstrap 3, some older versions of the gem
 gem 'bootstrap-sass', '~> 3.3.5.1'
@@ -58,7 +58,6 @@ group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
-
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
