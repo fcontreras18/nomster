@@ -1,6 +1,6 @@
 namespace :db do
-  desc "Fill database"
-  task :populate => :environment do
+  desc 'Fill database'
+  task populate: :environment do
     require 'faker'
 
     # reset database
@@ -12,7 +12,7 @@ namespace :db do
     user = User.new(email:  'fcontreras18@gmail.com', password:  'password')
     user.save
 
-    10.times do 
+    10.times do
       user = User.new(email:  Faker::Internet.email, password:  'password')
       user.save
     end
@@ -25,18 +25,25 @@ namespace :db do
       place.name        = Faker::Company.name
       place.address     = Faker::Address.street_address
       place.description = Faker::Lorem.sentence
-    end 
+    end
 
     places = Place.all
-    ratings = ['1_star', '2_stars', '3_stars', '4_stars', '5_stars']
+    ratings = %w(1_star 2_stars 3_stars 4_stars 5_stars)
 
-    places.each do | place |
+    places.each do |place|
       5.times do
-        place.comments.create!(user_id: user_ids.sample, message: Faker::Lorem.sentence, rating: ratings.sample, place_id: place.id )
+        place.comments.create!(user_id: user_ids.sample, message: Faker::Lorem.sentence, rating: ratings.sample, place_id: place.id)
       end
-      # 5.times do
-      #   place.photos.create!(user_id: user_ids.sample, caption: Faker::Lorem.sentence, picture: Faker::Avatar.image, place_id: place.id )
-      # end
+    end
+
+    places.each do |place|
+      10.times do
+        photo = Photo.new(caption: Faker::Lorem.sentence)
+        photo.user_id = user_ids.sample
+        photo.place_id = place.id
+        photo.picture = File.open(Dir.glob("#{Rails.root}/test/fixtures/pictures/*.jpg").sample)
+        photo.save!
+      end
     end
   end
 end
